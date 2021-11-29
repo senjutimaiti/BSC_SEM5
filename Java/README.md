@@ -21,3 +21,21 @@ c. Set the time to AM/PM mode.
 Use necessary constructors and methods to do the above task.
 
 A06: Frequency of a number of an given array.
+
+A07: Write a program which print palindrome number.
+
+A08: Print the pattern:
+
+A09: Java Program to sort the elements of an array in ascending order.
+
+A10: Java Program to find Second Smallest Number in an Array
+
+A11: Java Program to display the lower triangular matrix
+
+A12: Java Program to determine whether a given matrix is an identity matrix
+
+A13: Java Program to divide a string in &#39;N&#39; equal parts.
+
+A14: Java Program to find the longest repeating sequence in a string
+I/P : str = &quot;acbdfghybdf&quot;
+O/P : bdf
