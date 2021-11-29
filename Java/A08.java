@@ -1,12 +1,13 @@
 import java.util.*;  
-public class Pattern  
+public class A08
 {  
     public static void main(String args[])  
     {  
         int i, j, rows;  
         Scanner sc = new Scanner(System.in);  
         System.out.print("Enter the number of rows you want to print: ");  
-        rows = sc.nextInt();          
+        rows = sc.nextInt();   
+        sc.close();       
         for (i= 0; i<= rows-1; i++)  
         {  
             for (j=0; j<=i; j++)   

@@ -25,15 +25,21 @@ class genPalindrome
         }
     }
 }
-public class Palindrome
+
+public class A07
 {
     public static void main(String args[])
     {
         Scanner sc = new Scanner(System.in);
+        
         System.out.println("Enter lower limit");
         int l=sc.nextInt();
+        
         System.out.println("Enter upper limit");
         int u=sc.nextInt();
+
+        sc.close();
+
         if( l>u || u<0 || l<0)
         {
             System.out.println("Wrong input");

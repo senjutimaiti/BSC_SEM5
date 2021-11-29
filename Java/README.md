@@ -25,6 +25,13 @@ A06: Frequency of a number of an given array.
 A07: Write a program which print palindrome number.
 
 A08: Print the pattern:
+* 
+* * 
+* * * 
+* * * * 
+* * * 
+* * 
+* 
 
 A09: Java Program to sort the elements of an array in ascending order.
 

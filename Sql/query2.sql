@@ -19,6 +19,7 @@ INSERT INTO BOOKS VALUES(105, 'PL SQL-Ref', 'Scott Urman', 750, 'Database');
 INSERT INTO BOOKS VALUES(106, 'UNIX', 'Sumitava Das', 300, 'System');
 INSERT INTO BOOKS VALUES(107, 'Optics', 'Ghatak', 600, 'Science');
 INSERT INTO BOOKS VALUES(108, 'Data Structure', 'G.S. Baluja', 350, 'Others');
+INSERT INTO BOOKS VALUES(109, 'Bismayer biye', 'Senjuti Maiti', NULL, 'Others');
 
 INSERT INTO ISSUE (LIB_ISSUE_ID, BOOK_NO, MEMBER_ID, ISSUE_DATE) VALUES (7001, 101, 1, '2011-01-10');
 INSERT INTO ISSUE (LIB_ISSUE_ID, BOOK_NO, MEMBER_ID, ISSUE_DATE) VALUES (7002, 102, 2, '2011-01-25');
@@ -28,31 +29,8 @@ INSERT INTO ISSUE (LIB_ISSUE_ID, BOOK_NO, MEMBER_ID, ISSUE_DATE) VALUES (7005, 1
 INSERT INTO ISSUE (LIB_ISSUE_ID, BOOK_NO, MEMBER_ID, ISSUE_DATE) VALUES (7006, 108, 5, '2011-04-12');
 INSERT INTO ISSUE (LIB_ISSUE_ID, BOOK_NO, MEMBER_ID, ISSUE_DATE) VALUES (7007, 101, 8, '2011-08-01');
 
-SELECT MAX(Cost) AS MaxCost, Book_Name
-FROM Books;
 
-SELECT MIN(Cost) AS MinimumCost, 
-AVG(Cost) AS AverageCost, 
-SUM(Cost) AS TotalCost 
-FROM Books;
 
-SELECT Member_Name, Member.Member_id, Issue.issue_date
-FROM Member
-INNER JOIN Issue
-On Member.Member_id = Issue.Member_id
-where issue_date between '2011-01-26' and '2011-04-14';
 
-SELECT book_name, author_name, category
-FROM Books
-WHERE NOT category = 'Others';
 
-SELECT book_name, author_name
-FROM Books
-WHERE author_name LIKE '____t%';
 
-SELECT COUNT(cost) AS CostGreaterThan350
-FROM books
-WHERE cost > 350;
-
-SELECT COUNT(DISTINCT author_name) AS DistinctAuthor
-FROM books;
