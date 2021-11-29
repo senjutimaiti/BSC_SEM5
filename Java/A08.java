@@ -1,13 +1,9 @@
 import java.util.*;  
-public class A08
+class pattern
 {  
-    public static void main(String args[])  
+    void pattern1(int rows)  
     {  
-        int i, j, rows;  
-        Scanner sc = new Scanner(System.in);  
-        System.out.print("Enter the number of rows you want to print: ");  
-        rows = sc.nextInt();   
-        sc.close();       
+        int i, j;       
         for (i= 0; i<= rows-1; i++)  
         {  
             for (j=0; j<=i; j++)   
@@ -25,4 +21,21 @@ public class A08
             System.out.println("");  
         }  
     }  
-}  
+}
+
+public class A08
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);  
+        System.out.print("Enter the number of rows you want to print: ");  
+        int rows = sc.nextInt();   
+        sc.close();  
+        if(rows<1)
+            System.out.println("Invalid input");
+        else{
+            pattern ob = new pattern();
+            ob.pattern1(rows);
+        }
+    }
+}
