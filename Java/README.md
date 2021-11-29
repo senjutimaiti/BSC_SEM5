@@ -34,8 +34,8 @@ A11: Java Program to display the lower triangular matrix
 
 A12: Java Program to determine whether a given matrix is an identity matrix
 
-A13: Java Program to divide a string in &#39;N&#39; equal parts.
+A13: Java Program to divide a string in N equal parts.
 
 A14: Java Program to find the longest repeating sequence in a string
-I/P : str = &quot;acbdfghybdf&quot;
+I/P : str = acbdfghybdf
 O/P : bdf
