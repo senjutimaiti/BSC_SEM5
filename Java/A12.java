@@ -1,10 +1,11 @@
 import java.util.Scanner;
 
-class IMatrix{
-    public static void main(String args[])
+class IMatrix
+{
+    void isId()
     {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the dimention of the sqare matrix as a number");
+        System.out.println("Enter the dimension of the square matrix");
         int d = sc.nextInt();
         int matrix[][] = new int[d][d];
         System.out.println("Enter the matrix");
@@ -16,6 +17,7 @@ class IMatrix{
             }
         }
         sc.close();
+
         boolean isIdentity = true;
         for(int i=0;i<d;i++)
         {
@@ -49,3 +51,12 @@ class IMatrix{
         }
     }
 }
+
+public class A12
+{
+    public static void main(String[] args)
+    {
+        IMatrix ob=new IMatrix();
+        ob.isId();
+    }
+}  

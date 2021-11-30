@@ -1,10 +1,10 @@
 import java.util.Scanner;
-
-class LowTri{
-    public static void main(String args[])
+class LowTri
+{
+    void lowertri()
     {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the dimention of the square matrix");
+        System.out.println("Enter the dimension of the square matrix");
         int d = sc.nextInt();
         int matrix[][] = new int[d][d];
         System.out.println("Enter the matrix");
@@ -16,6 +16,7 @@ class LowTri{
             }
         }
         sc.close();
+
         System.out.println("The lower triangular matrix is");
         for(int i=0;i<d;i++)
         {
@@ -33,3 +34,12 @@ class LowTri{
         }
     }
 }
+
+public class A11
+{
+    public static void main(String[] args)
+    {
+        LowTri ob=new LowTri();
+        ob.lowertri();
+    }
+}  
