@@ -115,14 +115,14 @@ class Faculty2 extends LibraryMember2
     }
 }
 
-public class Driver2
+public class A16
 {
     public static void main(String[] args)
     {
         Scanner sc = new Scanner (System.in);
 
         System.out.println("Enter the number of members: ");
-        int c=0,n = sc.nextInt();
+        int c=0,temp,n = sc.nextInt();
 
         LibraryMember2[] arr= new LibraryMember2[n];
 
@@ -154,29 +154,39 @@ public class Driver2
                 case 1: {
                     System.out.println("Enter the value to be searched: ");
                     String enteredValue = sc.next();
+                    temp=0;
                     for(int i=0; i<n; i++)
                     {
                         String num = arr[i].getName();
-                        if (num.equals(arr[i].memberName))
-                            System.out.println("Yes Found");
-                        else
-                            System.out.println("Not Found");
+                        if (num.equals(enteredValue)){
+                            System.out.println("Found");
+                            temp++;
+                            break;
+                        }
                     }
+                    if(temp==0)
+                        System.out.println("Not Found");
                 }break;
 
                 case 2:{
                     System.out.println("Enter the value to be searched: ");
                     String enteredValue = sc.next();
+                    temp=0;
                     for(int i=0; i<n; i++)
                     {
                         String num = arr[i].getName();
-                        if (num.equals(enteredValue))
+                        if (num.equals(enteredValue)){
                             arr[i].display();
+                            temp++;
+                        }
                     }
+                    if(temp==0)
+                        System.out.println("Not Found");
                 }break;
                 case 3: break;
                 default: System.out.println("Invalid Input");
             }
         }
+        sc.close();
     }
 }
