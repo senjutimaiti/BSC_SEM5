@@ -47,7 +47,7 @@ class Pupil extends Person
         this.fees = fees;
     }
 
-    public void setPupil(String name, String address, String program, int year, double fees) 
+    public void setPupil(String name, String address, String program, double year, double fees) 
     {
         setPerson(name, address);
         this.program = program;
@@ -98,13 +98,13 @@ class Ass5
 {
     public static void main(String args[]) 
     {
-        Pupil Pupil = new Pupil("Sayan", "Rathtala", "BSc. Computer Science", 2020, 30000);
+        Pupil Pupil = new Pupil("Sayan", "Rathtala", "BSc. Computer Science", "2020", 30000);
         Staff staff = new Staff("Bob", "Dunlop", "Dummy", 30000);
 
         Pupil.tostring();
         staff.tostring();
 
-        Pupil.setPupil("Changed Pupil", "New rathtala", "MSc Computer Science", 2020, 60000);
+        Pupil.setPupil("Changed Pupil", "New rathtala", "MSc Computer Science", "2020", 60000);
         staff.setStaff("New Staff Name", "New address", "New Dummy", 60000);
 
         Pupil.tostring();
