@@ -47,7 +47,7 @@ class Pupil extends Person
         this.fees = fees;
     }
 
-    public void setPupil(String name, String address, String program, double year, double fees) 
+    public void setPupil(String name, String address, String program, String year, double fees) 
     {
         setPerson(name, address);
         this.program = program;
