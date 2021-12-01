@@ -21,16 +21,10 @@ class MyPoint
     }
 
     //A method setXY() to set both x and y.
-    public void setXY()
+    public void setXY(int x,int y)
     {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter the value of x and y respectively");
-
-        x = sc.nextInt();
-        y = sc.nextInt();
-
-        sc.close();
+        this.x = x;
+        this.y = y;
     }
 
     //A method getXY() which returns the x and y in a 2-element int array.
@@ -60,8 +54,14 @@ class MyPoint
 
     public void TestMyPoint()
     {
-        MyPoint obj = new MyPoint(3,1);
-        obj.tostring();
+        MyPoint obj = new MyPoint(1,1);
+        String init = obj.tostring();
+        System.out.println("\n"+init);
+        
+        obj.setXY(3,1);
+        init = obj.tostring();
+        System.out.println("\n"+init);
+
         double result = obj.distance(6,5);
         System.out.println("The distance between two points are: "+result);
     }
@@ -75,3 +75,4 @@ public class Ass4
         ob.TestMyPoint();
     }
 }
+
