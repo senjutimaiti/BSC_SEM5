@@ -2,7 +2,7 @@ clear;
 clc;
 close;
 path = ('D:\Sem 5\Pics\');
-im = double(imread(path+"Liza.tif"));
+im = double(imread(path+"Lena.tif"));
 //im = imread("D:\Sem 5\Pics\Liza.tif");
 [m n] = size(im);
 hist = [];
