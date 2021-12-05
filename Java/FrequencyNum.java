@@ -29,5 +29,6 @@ class FrequencyNum
 			}
 			System.out.print("The frequency of "+num+" = "+f);
 		}
+		sc.close();
 	}
 }

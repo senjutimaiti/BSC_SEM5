@@ -1,4 +1,3 @@
-import java.util.*;
 
 //A class called MyPoint, which models a 2D point with x and y coordinates.
 class MyPoint

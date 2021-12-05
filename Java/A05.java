@@ -1,57 +1,73 @@
-/*
-Define a class Clock that does the following: -
-a. Accept hours, minutes and seconds.
-b. Check the validity numbers.
-c. Set the time to AM/PM mode.
-Use necessary constructors and methods to do the above task.
-*/
+import java.util.*;
+class Clock
+{
+	int hours,minutes,seconds;
 
-import java.util.Scanner;
+	Clock(int h ,int m, int s)
+	{
+		hours=h;
+		minutes=m;
+		seconds=s;
+	} 
+
+	void isTimeValid()
+	{
+		if(hours>=0 &&  hours <24 && minutes >=0  && seconds>=0 )
+		{
+			System.out.println("time is valid");
+			setAmPmMode();
+		}
+		else
+			System.out.println("time is not valid");
+	}
+
+	void setAmPmMode()
+	{
+		if (seconds > 60)
+		{
+			minutes = minutes+seconds/60;
+			seconds = seconds%60;
+		}
+		
+		if (minutes > 60)
+		{
+			hours = hours+minutes/60;
+			minutes = minutes%60;
+		}
+		
+		if(hours > 24)
+			System.out.println("time is not valid");
+		
+		
+		else 
+		{
+			if(hours<12)
+			{ 
+				System.out.println("Time is "+hours+":"+minutes+":"+seconds+" AM");
+			}
+			else
+			{
+				if(hours!=12)
+					hours=hours-12;
+				System.out.println("Time is "+hours+":"+minutes+":"+seconds+" PM");
+			} 
+		}
+	}
+}
 class A05
 {
-	void Accept()
-	{
-		Scanner sc=new Scanner(System.in);
-		
-		System.out.print("Enter the hours:");
-		int h=sc.nextInt();
-		
-		System.out.print("Enter the minutes:");
-		int m=sc.nextInt();
-		
-		System.out.print("Enter the seconds:");
-		int s=sc.nextInt();
-
-		sc.close();
-
-		Check(h,m,s);
-	}
-	void Check(int h,int m,int s)
-	{
-		if(((h<0)||(h>23)) || ((m<0)||(m>59)) || ((s<0)||(s>59)))
-		{
-			System.out.println("Invalid input");
-		}
-		else
-			Set(h,m,s);
-	}
-	void Set(int h,int m,int s)
-	{
-		String mode;
-		if(h<12)
-			mode="AM";
-		else if(h==12)
-			mode="PM";
-		else
-		{
-			mode="PM";
-			h=h-12;
-		}
-		System.out.println("Time: "+h+":"+m+":"+s+" "+mode);	
-	}
 	public static void main(String args[])
 	{
-		A05 c=new A05();
-		c.Accept();	
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Hours");
+        int h = sc.nextInt();
+        System.out.println("Enter Minutes");
+        int m = sc.nextInt();
+        System.out.println("Enter Seconds");
+        int s = sc.nextInt();
+        Clock c1= new Clock(h, m, s);
+		c1.isTimeValid();
+
+		sc.close();
 	}
-}	
+}

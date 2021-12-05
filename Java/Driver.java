@@ -1,117 +1,79 @@
-import java.util.Scanner;
-
-class LibraryMember
+abstract class employee2
 {
-    long memberId;
-    String memberName;
-    String address;
-    long phoneNumber;
-    Scanner sc = new Scanner(System.in);
+    private String name;
+    private String address;
+    private double salary;
 
-    LibraryMember()
+    employee2(String name, String address, double salary)
     {
-        memberId = -1;
-        memberName = null;
-        address = null;
-        phoneNumber = -1;
+        this.setname(name);
+        this.setaddress(address);
+        this.setsalary(salary);
     }
 
-    void read()
-    {
-        System.out.println("\nEnter id: ");
-        memberId = sc.nextLong();
-
-        sc.nextLine();
-        System.out.println("\nEnter name: ");
-        memberName = sc.nextLine();
-
-        System.out.println("\nEnter addresss: ");
-        address = sc.nextLine();
-
-        System.out.println("\nEnter phone number: ");
-        phoneNumber = sc.nextLong();
+    protected void setname(String name){
+    	this.name = name;
+    }
+    protected void setaddress(String address){
+    	this.address = address;
+    }
+    protected void setsalary(double salary){
+    	this.salary = salary;
     }
 
-    void display()
-    {
-        System.out.println("Id: "+ memberId);
-        System.out.println("Name: "+ memberName);
-        System.out.println("Address: "+ address);
-        System.out.println("Phone number: "+ phoneNumber);
+    protected String getname(){
+    	return this.name;
+    }
+    protected String getaddress(){
+    	return this.address;
+    }
+    protected double getsalary(){
+    	return this.salary;
     }
 
-    long getId()
+    abstract double netsalary();
+    abstract void printDetails();
+}
+
+class manager2 extends employee2
+{
+	manager2(String name, String address, double salary){
+		super(name,address,salary);
+	}
+    double netsalary()
     {
-        return memberId;
+    	double sal = super.getsalary();
+    	return (0.15*sal+0.14*sal+0.12*sal+sal);        
+    }
+
+    void printDetails()
+    {
+    	double net = this.netsalary();
+    	String Name = super.getname();
+    	String Address = super.getaddress();
+    	double Salary = super.getsalary();
+        System.out.println(Name+" "+Address+" "+Salary+" "+net);
     }
 }
 
-class Student extends LibraryMember
+class clerk extends employee2
 {
-    long rollNumber;
-    String stream;
-    LibraryMember obj = new LibraryMember();
-
-    Student()
+	clerk(String name, String address, double salary){
+		super(name,address,salary);
+	}
+    double netsalary()
     {
-        rollNumber = -1;
-        stream = null;
+    	double sal = super.getsalary();
+    	return (0.15*sal+0.14*sal+0.12*sal+sal);        
     }
 
-    void read()
+    void printDetails()
     {
-        obj.read();
-
-        System.out.println("\nEnter roll number: ");
-        rollNumber = obj.sc.nextLong();
-
-        obj.sc.nextLine();
-        System.out.println("\nEnter stream: ");
-        stream = obj.sc.nextLine();
-    }
-
-    void display()
-    {
-        obj.display();
-        System.out.println("Roll number: "+ rollNumber);
-        System.out.println("Stream: "+ stream);
-    }
-
-    long getId()
-    {
-        long num = obj.getId();
-        return num;
-    }
-}
-
-class Faculty extends LibraryMember
-{
-    long facultyId;
-    LibraryMember obj = new LibraryMember();
-
-    Faculty()
-    {
-        facultyId = -1;
-    }
-
-    void read()
-    {
-        obj.read();
-
-        System.out.println("\nEnter faculty Id: ");
-        facultyId = obj.sc.nextLong();
-    }
-
-    void display()
-    {
-        obj.display();
-        System.out.println("Roll number: "+ facultyId);
-    }
-
-    long getId()
-    {
-        long num = obj.getId();
-        return num;
+    	double net = this.netsalary();
+    	String Name = super.getname();
+    	String Address = super.getaddress();
+    	double Salary = super.getsalary();
+        System.out.println(Name+" "+Address+" "+Salary+" "+net);
     }
 }
 
@@ -119,62 +81,10 @@ public class Driver
 {
     public static void main(String[] args)
     {
-        Scanner sc = new Scanner (System.in);
+        manager2 ob = new manager2("Bruno","London",1000);
+        ob.printDetails();
 
-        System.out.println("Enter the number of members: ");
-        int c=0,n = sc.nextInt();
-
-        LibraryMember[] arr= new LibraryMember[n];
-
-        System.out.println("Enter member details: ");
-        for (int i=0; i<n; i++)
-        {
-            System.out.println("Press 1 for student and 0 for faculty");
-            c = sc.nextInt();
-            if (c==1)
-            {
-                arr[i] = new Student();
-                arr[i].read();
-                //arr[i].display();
-            }
-            else
-            {
-                arr[i] = new Faculty();
-                arr[i].read();
-                //arr[i].display();
-            }
-        }
-        
-        while(c!=3)
-        {
-            System.out.println("Press 1 for search and 2 for display and 3 to exit");
-            c = sc.nextInt();
-
-            switch(c){
-                case 1: {
-                    System.out.println("Enter the value to be searched: ");
-                    long enteredValue = sc.nextInt();
-                    for(int i=0; i<n; i++)
-                    {
-                        long num = arr[i].getId();
-                        if (num == enteredValue)
-                            System.out.println("Yes Found");
-                    }
-                }break;
-
-                case 2:{
-                    System.out.println("Enter the value to be searched: ");
-                    long enteredValue = sc.nextInt();
-                    for(int i=0; i<n; i++)
-                    {
-                        long num = arr[i].getId();
-                        if (num == enteredValue)
-                            arr[i].display();
-                    }
-                }break;
-                case 3: break;
-                default: System.out.println("Invalid Input");
-            }
-        }
+        clerk obj = new clerk("David","England",2000);
+        obj.printDetails();
     }
 }

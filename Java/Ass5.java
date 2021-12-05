@@ -1,4 +1,3 @@
-import java.util.*;
 
 /*Create a superclass ‘Person’ and two subclasses ‘Pupil’ and ‘Staff’. The following are the instance
 variables and methods:
@@ -23,7 +22,7 @@ class Person
         this.address = address;
     }
 
-    protected void tostring() 
+    protected void tostring1() 
     {
         System.out.println("Person Name = " + name + " Address = " + address);
     }
@@ -56,7 +55,7 @@ class Pupil extends Person
     }
 
     @Override
-    public void tostring() 
+    public void tostring1() 
     {
         System.out.println("Person Name = " + name + " Address = " + address + " Program = " + program + " Year = "
                 + year + " Fees = " + fees);
@@ -88,7 +87,7 @@ class Staff extends Person
     }
 
     @Override
-    public void tostring() 
+    public void tostring1() 
     {
         System.out.println("Person Name = " + name + " Address = " + address + " School = " + school + " Pay = " + pay);
     }
@@ -101,14 +100,14 @@ class Ass5
         Pupil Pupil = new Pupil("Sayan", "Rathtala", "BSc. Computer Science", "2020", 30000);
         Staff staff = new Staff("Bob", "Dunlop", "Dummy", 30000);
 
-        Pupil.tostring();
-        staff.tostring();
+        Pupil.tostring1();
+        staff.tostring1();
 
         Pupil.setPupil("Changed Pupil", "New rathtala", "MSc Computer Science", "2020", 60000);
         staff.setStaff("New Staff Name", "New address", "New Dummy", 60000);
 
-        Pupil.tostring();
-        staff.tostring();
+        Pupil.tostring1();
+        staff.tostring1();
     }
 }
 

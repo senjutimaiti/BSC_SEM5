@@ -13,6 +13,8 @@ class sort
         System.out.println("Enter the array elements: "); 
         for (i=0; i<n; i++)
             arr[i] = sc.nextInt();
+
+        sc.close();
         for (i=0; i<n/2; i++) 
         {
             for (j=0; j<n/2-i-1; j++)
@@ -39,7 +41,7 @@ class sort
         }
         System.out.println("The array elements after sorting: ");   
         display(arr,n);
-        sc.close();
+        
     }
     public static void display(int arr[],int n)
     {
