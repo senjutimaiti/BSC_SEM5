@@ -22,7 +22,7 @@ def addMatrix(matrix1, matrix2):
 
     #to check if the two matrices are compatible for addition
     if((len(matrix1) != len(matrix2)) or (len(matrix1[0]) != len(matrix2[0]))):
-        print("\nDimensions of the mattrices doesnot match\n")
+        print("\nDimensions of the matrices does not match\n")
         return None
 
     result = []
@@ -57,7 +57,7 @@ def subtractMatrix(matrix1, matrix2):
 
     #to check if the two matrices are compatible for subtraction
     if((len(matrix1) != len(matrix2)) or (len(matrix1[0]) != len(matrix2[0]))):
-        print("\nDimensions of the mattrices doesnot match\n")
+        print("\nDimensions of the matrices does not match\n")
         return None
 
     result = []
@@ -91,7 +91,7 @@ def multiplyMatrix(matrix1, matrix2):
         return None
 
     if(len(matrix1[0]) != len(matrix2)):
-        print("\nDimensions of the mattrices doesnot match\n")
+        print("\nDimensions of the matrices does not match\n")
         return None
 
     result = [] 
