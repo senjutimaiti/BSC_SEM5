@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "Sem 5",
+			"path": "."
+		},
+		{
+			"name": "college",
+			"path": "H:\\xampp\\htdocs\\college"
+		}
+	],
+	"settings": {
+		"java.project.sourcePaths": [
+			"Java"
+		]
+	}
+}
