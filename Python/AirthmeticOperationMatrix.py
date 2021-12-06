@@ -44,7 +44,7 @@ def addMatrix(matrix1, matrix2):
     del tempResult
 
     print("\n")
-    for i in range(len(result[0])):
+    for i in range(len(result)):
         print(*result[i], sep = "\t") 
 
 
@@ -79,7 +79,7 @@ def subtractMatrix(matrix1, matrix2):
     del tempResult
 
     print("\n")
-    for i in range(len(result[0])):
+    for i in range(len(result)):
         print(*result[i], sep = "\t") 
 
 
@@ -118,7 +118,7 @@ def multiplyMatrix(matrix1, matrix2):
     del tempResult   
 
     print("\n")
-    for i in range(len(result[0])):
+    for i in range(len(result)):
         print(*result[i], sep = "\t")    
 
 
@@ -178,9 +178,8 @@ matrix1 = [
 ]
 
 matrix2 = [
-    [2, 4],
-    [8, 10],
-    [14, 16]
+    [2, 4, 3],
+    [8, 10, 4]
 ]
 
 operation(matrix1, matrix2)
