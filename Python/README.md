@@ -29,3 +29,12 @@ display two amounts: a 15% tip and a 20% tip.
              2.  Dequeue
              3.  Display
              4.  Exit
+
+■ Write a Python program to remove an empty tuple(s) from a list of tuples
+
+■ Write a Python program to count the elements in a list until an element is a tuple.
+
+■ Write a Python program to remove duplicates from a list.
+
+■ Write a program in Python to find a string and replace it with another string taken from user as
+input.
