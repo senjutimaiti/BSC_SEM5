@@ -1,9 +1,9 @@
-class Student2
+class Student3
 {
     private String name;
     private String section;
 
-    protected Student2(String name, String section)
+    protected Student3(String name, String section)
     {
         this.setName(name);
         this.setSection(section);
@@ -26,7 +26,7 @@ class Student2
         return this.section;
     }
 
-    protected boolean isEqual(Student2 o1, Student2 o2)
+    protected boolean isEqual(Student3 o1, Student3 o2)
     {
         if(o1 == o2)
             return true;
@@ -44,14 +44,14 @@ public class StudentDriver
 {
     public static void main(String[] args)
     {
-        Student2 object1 = new Student2("Bruno","A");
-        Student2 object2;
+        Student3 object1 = new Student3("Bruno","A");
+        Student3 object2;
 
         //object2 = object1;
 
         //object2 = new Student2("Bruno","A");
 
-        object2 = new Student2("Bruni","B");
+        object2 = new Student3("Bruni","B");
 
         System.out.println(object1.isEqual(object1, object2));
 
