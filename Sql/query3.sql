@@ -117,3 +117,8 @@ SELECT member_name
 From member
 WHERE Member_name like '%T%' and 
 (Member_name like 'S%' or Member_name like 'A%');
+
+select Book_No, count(Book_No) as IssueCount 
+from issue
+group by Book_No
+order by IssueCount desc;

@@ -30,6 +30,8 @@ display two amounts: a 15% tip and a 20% tip.
              3.  Display
              4.  Exit
 
+■ WWrite a Python program to add, subtract, multiply and transpose a matrix.
+
 ■ Write a Python program to remove an empty tuple(s) from a list of tuples
 
 ■ Write a Python program to count the elements in a list until an element is a tuple.
@@ -38,3 +40,4 @@ display two amounts: a 15% tip and a 20% tip.
 
 ■ Write a program in Python to find a string and replace it with another string taken from user as
 input.
+
