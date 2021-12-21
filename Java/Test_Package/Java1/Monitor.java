@@ -6,10 +6,4 @@ public class Monitor
         System.out.println("Hello Monitor");
     }
 }
-class CPU 
-{
-    public void display()
-    {
-        System.out.println("Hello CPU");
-    }
-}
+
