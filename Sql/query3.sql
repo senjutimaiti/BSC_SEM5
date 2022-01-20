@@ -156,7 +156,33 @@ order by BookName desc;
 select Book_No, book_name, author_name, cost,(substring(Category,1,1)) as Category
 from books;
 
+select category as Category, count(book_no) as CountOfBooks
+from books
+group by Category;
+
 select Book_No, count(Book_No) as IssueCount 
 from issue
 group by Book_No
 order by IssueCount desc;
+
+select member_id, count(book_no) as BookCount
+from issue
+group by Member_Id
+having BookCount > 1;
+
+select Book_No as BookNo,count(Book_No) as CountBook, Member_Id as MemmberId
+from issue
+group by Member_Id, Book_No
+having count(Member_Id) > 1;
+
+select * from books
+group by Cost
+order by Cost desc 
+limit 0,1;
+
+select e1.Book_No, e1.Member_Id
+from issue e1,issue e2 
+where e1.book_no = e2.book_no and e1.member_id = e2.member_id;
+
+
+select * from books where cost = max(cost) and cost not in (select max(cost) from books);
