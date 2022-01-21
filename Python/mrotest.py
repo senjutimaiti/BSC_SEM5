@@ -12,7 +12,7 @@ class C():
         print("C")
         super().__init__()
 
-class D(B,C,A):
+class D(C,B,A):
     def __init__(self):
         print("D")
         super().__init__()
