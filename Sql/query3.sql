@@ -184,5 +184,58 @@ select e1.Book_No, e1.Member_Id
 from issue e1,issue e2 
 where e1.book_no = e2.book_no and e1.member_id = e2.member_id;
 
+CREATE TABLE Books_Copy AS SELECT * FROM Books;
+CREATE TABLE Issue_Copy AS SELECT * FROM Issue;
+CREATE TABLE Member_Copy AS SELECT * FROM Member;
 
-select * from books where cost = max(cost) and cost not in (select max(cost) from books);
+CREATE TABLE Query1(Book_No INT, Issue_Date DATE);
+INSERT INTO Query1(Book_No) SELECT Book_No FROM Books;
+INSERT INTO Query1(Issue_Date) SELECT Issue_Date FROM Issue;
+SELECT * FROM Query1;
+
+CREATE TABLE Query2(Book_Name VARCHAR(30), Author_Name VARCHAR(30), Cost FLOAT);
+INSERT INTO Query2(Book_Name, Author_Name, Cost) SELECT Book_Name, Author_Name, Cost FROM Books WHERE Cost>300;
+SELECT * FROM Query2;
+
+DROP TABLE Query2;
+CREATE TABLE Query2(Book_Name VARCHAR(30), Author_Name VARCHAR(30), Cost FLOAT);
+INSERT INTO Query2 (Book_Name, Author_Name, Cost) SELECT Book_Name, Author_Name, Cost FROM Books WHERE Cost<=300;
+SELECT * FROM Query2;
+
+ALTER TABLE Books_Copy ADD column Available INT(5); 
+DESC Books_Copy;
+SELECT * FROM Books_Copy;
+ALTER TABLE Books_Copy ADD CONSTRAINT a1 PRIMARY KEY(Book_No);
+UPDATE Books_Copy SET Available=57 WHERE Book_No=101;
+
+ALTER TABLE Books_Copy MODIFY column Category varchar(15);
+DESC Books_Copy;
+
+
+select * from books where cost in (select max(cost) from books where cost not in (select max(cost) from books));
+select * from books where cost = (select min(cost) from books);
+
+
+
+/*Retrieve the Penalty Amount of the Members who has taken the book “LET US C”*/
+select member.Penalty_Amount from member 
+where member.member_id in (select issue.member_id from issue
+inner join books
+on issue.Book_No = books.Book_No
+where book_name = 'Let us C');
+
+select * from books;
+select * from member;
+
+
+
+
+
+
+
+
+
+
+
+
+

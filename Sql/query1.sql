@@ -1,5 +1,5 @@
-CREATE DATABASE assignment1;
-USE assignment1;
+CREATE DATABASE assignment2;
+USE assignment2;
 
 CREATE TABLE Member (
     Member_id integer(5),
@@ -9,13 +9,13 @@ CREATE TABLE Member (
     Membership_type varchar(20),
     Fees_paid integer(4),
     Max_Books_Allowed integer(2),
-    Penalty_Amount integer(4)
+    Penalty_Amount float(7,2)
 );
 CREATE TABLE Books (
     Book_No integer(6),
     Book_Name varchar(30),
     Author_Name varchar(30),
-    Cost integer(4),
+    Cost float(7,2),
     Category char(10)
 );
 CREATE TABLE Issue(
