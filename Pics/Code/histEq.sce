@@ -5,7 +5,7 @@ close;
 path=('D:\Sem 5\Pics\');
 im=imread(path+'pollen1.tif');
 [histo, cells]=imhist(im);
-//disp(hist);
+disp(cells);
 //disp(cells);
 [m n]=size(im);
 hist = histo/(m*n);
@@ -24,10 +24,10 @@ end
 fig = [uint8(im) uint8(nim)];
 imshow(fig);
 
-subplot(1,2,1);imhist(uint8(im), 255, 0);
+subplot(2,2,3);imhist(uint8(im), 255, 0);
 //plot(0:255, histo);
 
-subplot(1,2,2);imhist(uint8(nim), 255, 0);
+subplot(2,2,1);imhist(uint8(nim), 255, 0);
 //plot(0:255, histi);
 
 

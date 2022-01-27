@@ -1,12 +1,12 @@
 clear;
 clc;
 close;
-path = ("C:\Users\Arka\Desktop\5th sem\DIP\ch3\");
-im = double(rgb2gray(imread(path+"no_log.jpg")));
-disp(imfinfo(path+"geeks.jpg"));
+path=('D:\Sem 5\Pics\');
+im = double(rgb2gray(imread(path+'re1.png')));
+disp(imfinfo(path+"re1.png"));
 [m n] = size(im);
-//c = 255/(log(1 + max(im)));
-c=25;
+c = 255/(log(1 + max(im)));
+
 for i=1:m
     for j=1:n
         new_im(i, j) = c*log(1+im(i,j));

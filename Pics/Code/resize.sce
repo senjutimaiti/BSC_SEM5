@@ -13,7 +13,7 @@ for i=1:200
 		b(i,2*j+1)=a(i,j)
 	end
 end
-// Resize 200x200 image to 400x200 image
+ Resize 200x200 image to 400x200 image
 for i=1:200
 	for j=1:200
 		b(2*i,j)=a(i,j)

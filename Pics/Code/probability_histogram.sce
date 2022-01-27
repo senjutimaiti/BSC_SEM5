@@ -15,4 +15,4 @@ end
 for i=1:256
     hist(i) = hist(i)/(m*n);
 end
-plot(0:255, hist');
+plot(0:255, hist);

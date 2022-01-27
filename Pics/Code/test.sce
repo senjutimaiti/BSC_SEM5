@@ -11,16 +11,8 @@ row1=input('strating row : ');
 row2=input('ending row : ');
 col1=input('strating column : ');
 col2=input('ending column : ');
-t=1;
-g=1;
-for i=row1:row2
-    for j=col1:col2
-        new_img(t,g)=im1(i,j);
-        g=g+1;
-    end
-    t=t+1;
-    g=1;
-end
+rect=[row1, col1, row2-row1, col2-col1]
+new_img=imcrop(im1, rect);
 //new_img=im1(row1:row2,col1:col2);
 imshow(uint8(new_img));
 
