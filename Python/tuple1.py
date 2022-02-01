@@ -22,6 +22,6 @@ list = ['abc', 'def', 'def', ('abc', 'def'), 5]
 str1 = input("\nEnter the string to be found: ")
 str2 = input("\nEnter the string to be replaced with: ")
 
-new_list = [str2 if element == str1 else element for element in list]
+new_list = [str2 if i == str1 else i for i in list]
 
 print("\n",new_list,"\n")

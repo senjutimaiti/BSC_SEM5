@@ -11,7 +11,7 @@ with open("d:\Sem 5\Python\myfile.txt", 'r') as myfile:
     for line in myfile.readlines():
         #print(line)
         for word in line.split():
-            print(word)
+            #print(word)
             if word == "hello":
                 str += "Python "
             else:
